@@ -1,14 +1,27 @@
-function Panel(props) {
-	return (
-		<article>
-			<div className="inner">
-				<div className="pic">
-					<img src={`${props.path}/img/${props.data}.jpg`} />
-				</div>
+function Panel() {
+	const arr = ['Blizzards', 'Calm', 'Dusty_Road', 'Escape', 'Payday', 'Retreat', 'Seasonal', 'Vespers'];
+	const path = process.env.PUBLIC_URL;
+	const deg = 360/arr.length;	
 
-				<h2>{props.data}</h2>
-			</div>
-		</article>
+	return (
+		<>
+		{
+			arr.map((data,index)=>{				
+				return (
+					<article key={index} style={{transform: `rotate(${deg*index}deg) translateY(-100vh)`}}>
+						<div className="inner">
+							<div className="pic">
+								<img src={`${path}/img/${data}.jpg`} />
+							</div>
+
+							<h2>{data}</h2>				
+						</div>
+					</article>
+				)
+			})
+		}
+		</>
+		
 	)
 }
 
