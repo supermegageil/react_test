@@ -1,12 +1,17 @@
 import './css/style.css';
+import {Logo, Menu} from './components/Header.js';
+import Footer from './components/Footer.js';
 
 function App() {
 	return (
 		<div className="App">
-			<ul className="btns">
-				<li>button1</li>
-				<li>button2</li>
-			</ul>
+			{/* 전체 레이아웃 */}
+			<figure>
+				<Logo />
+				<Menu />
+
+				<Footer />				
+			</figure>
 		</div>
 	);
 }
